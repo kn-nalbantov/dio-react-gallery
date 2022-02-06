@@ -6,9 +6,9 @@ function App() {
   return (
     <div className="App">
       <h1>Gallery</h1>
-      <Collection name="Kaos"/>
-      <Collection name="La Matta"/>
-      <Collection name="Robert Rudger"/>
+      <Collection name="kaos"/>
+      <Collection name="lamatta"/>
+      <Collection name="rr"/>
     </div>
   );
 }
