@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="App">
       <h1>Gallery</h1>
-      <Collection name="kaos"/>
       <Collection name="lamatta"/>
+      <Collection name="kaos"/>
       <Collection name="rr"/>
     </div>
   );
