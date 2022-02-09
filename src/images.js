@@ -6,5 +6,6 @@ function importAll(r) {
   return images;
 }
 const images = importAll(require.context('../src/pictures', false, /\.JPG/));
+const flags = importAll(require.context('../src/flags', false, /\.png/));
 
-export default images;
+export { images, flags };
