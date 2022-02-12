@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Collection from './components/Collection.js';
 import { flags } from '../src/images.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [lang, setLang] = useState('eng');
@@ -10,6 +10,16 @@ function App() {
   function changeLang(e) {
     setLang(e.target.id);
   }
+
+  useEffect(() => {
+    const titles = {
+      eng: 'Area Gallery',
+      bg: 'Ареа Галерия',
+      it: 'Area Galleria',
+    };
+    document.title = titles[lang];
+  });
+
   return (
     <div>
       <div className='heading'>
