@@ -3,18 +3,19 @@ import kaos from '../icons/kaos.svg';
 import lamatta from '../icons/lamatta.svg';
 import rr from '../icons/robertrudger.svg';
 import { images } from '../images.js';
-import {english, bulgarian, italian} from '../lang.js';
+import {eng, bg, it} from '../lang.js';
 
 export default function Collection(prop) {
   const svgs = {kaos, lamatta, rr};
   const imgs = {kaos: images['6.JPG'], lamatta: images['0.JPG'], rr: images['12.JPG']}
+  const langs = { eng, bg, it };
   return (
     <div tabIndex="-1" className="collection">
       <img src={svgs[prop.name]} alt="La Matta logo" className="logo" />
-            <p>Бъди различен! Ла Мата взима прекаленото и му инжектира стил. <a href="https://area98.it/collections/lamatta" target="_blank">Научете повече.</a></p>
+            <p>{langs[prop.lang][prop.name]} <a href="https://area98.it/collections/lamatta" target="_blank" rel="noreferrer">Научете повече.</a></p>
             <button>⬇</button>
             <div className="fullimg">
-                <img src={imgs[prop.name]} alt="picture of a La Matta" className="displayed" />
+                <img src={imgs[prop.name]} alt="La Matta" className="displayed" />
             </div>
             <div className="thumb-bar"></div>
     </div>

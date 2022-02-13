@@ -1,4 +1,4 @@
-const english = {
+const eng = {
   title: 'Dio gallery',
   lamatta: 'Dare to be different! La Matta takes excess and injected it with style.',
   kaos: 'Never banal. Kaos - colourful, original and playful.',
@@ -6,7 +6,7 @@ const english = {
   learn: 'Learn more.',
 };
 
-const bulgarian = {
+const bg = {
   title: 'Галерия Дио',
   lamatta: 'Бъди различен! Ла Мата взима прекаленото и му инжектира стил.',
   kaos: 'Никога банален. Каос - цветен, оригинален и игрив.',
@@ -14,7 +14,7 @@ const bulgarian = {
   learn: 'Научете повече.',
 };
 
-const italian = {
+const it = {
   title: 'Dio gallery',
   lamatta: 'LA MATTA L’INTERPRETAZIONE DELL’ECCESSO “CON STILE”.',
   kaos: 'LA MATTA L’INTERPRETAZIONE DELL’ECCESSO “CON STILE”.',
@@ -22,4 +22,4 @@ const italian = {
   learn: 'Per saperne di più.',
 };
 
-export { english, bulgarian, italian };
+export { eng, bg, it };
