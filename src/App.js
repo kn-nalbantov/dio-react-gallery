@@ -30,7 +30,7 @@ function App() {
       </div>
       <Collection name='lamatta' lang={lang} />
       <Collection name='kaos' lang={lang} />
-      <Collection name='rr' lang={lang} />
+      <Collection name='robertrudger' lang={lang} />
     </div>
   );
 }
