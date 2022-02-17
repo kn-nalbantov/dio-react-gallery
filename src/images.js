@@ -23,4 +23,6 @@ for (let i=12; i<18; i++) {
   robertrudger.push(images[`${i}.JPG`]);
 }
 
-export { lamatta, kaos, robertrudger, flags };
+const imgs = { lamatta, kaos, robertrudger };
+
+export { imgs, flags };
