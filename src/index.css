@@ -29,13 +29,12 @@ button {
   height: 180px;
 }
 
-.thumb-bar img {
-  display: block;
+.thumb-bar {
+  display: none;
   width: 18.43%;
   float: left;
   cursor: zoom-in;
   height: 75px;
-  visibility: hidden;
 }
 
 .heading h1, .heading img {
