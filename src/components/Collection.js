@@ -9,8 +9,9 @@ export default function Collection(prop) {
   const svgs = { kaos, lamatta, robertrudger };
 
   function onClick(e) {
-    // document.querySelectorAll('.thumb-bar').forEach(x => x.style.display = 'block');
+    document.querySelectorAll('.thumb-bar').forEach(x => x.style.display = 'block');
     //change display of e.target thumb-bar pics
+    e.target.textContent = '⬆';
   }
   return (
     <div tabIndex='-1' className='collection'>
@@ -25,7 +26,7 @@ export default function Collection(prop) {
       <div className='fullimg'>
         <img src={imgs[prop.name][0]} alt={prop.name} className='displayed' />
       </div>
-      <div>
+      <div id={'imgs-' + prop.name}>
         {imgs[prop.name].map((x) => (
           <img src={x} key={x + 1} className='thumb-bar' />
         ))}
