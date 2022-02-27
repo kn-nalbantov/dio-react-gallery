@@ -14,7 +14,7 @@ for (let i=0; i<6; i++) {
 }
 
 const kaos = [];
-for (let i=7; i<12; i++) {
+for (let i=6; i<12; i++) {
   kaos.push(images[`${i}.JPG`]);
 }
 
