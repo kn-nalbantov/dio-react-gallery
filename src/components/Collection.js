@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import kaos from '../icons/kaos.svg';
 import lamatta from '../icons/lamatta.svg';
 import robertrudger from '../icons/robertrudger.svg';
@@ -7,11 +7,23 @@ import { lang } from '../lang.js';
 
 export default function Collection(prop) {
   const svgs = { kaos, lamatta, robertrudger };
+  const [isOpen, setOpen] = useState(false);
 
   function onClick(e) {
-    document.querySelectorAll('.thumb-bar').forEach(x => x.style.display = 'block');
-    //change display of e.target thumb-bar pics
-    e.target.textContent = '⬆';
+    const container = e.target.parentNode;
+    const col = e.target.parentNode.children[4].children;
+
+    if (!isOpen) {
+      e.target.textContent = '⬆';
+      setOpen(true);
+      container.style.height = '500px';
+      Array.from(col).forEach(x => x.style.display = 'block');
+    } else {
+      e.target.textContent = '⬇';
+      Array.from(col).forEach(x => x.style.display = 'none');
+      container.style.height = '250px';
+      setOpen(false);
+    }
   }
   return (
     <div tabIndex='-1' className='collection'>

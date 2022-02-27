@@ -35,6 +35,7 @@ button {
   float: left;
   cursor: zoom-in;
   height: 75px;
+  border: thick double orange;
 }
 
 .heading h1, .heading img {
