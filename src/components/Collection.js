@@ -25,6 +25,14 @@ export default function Collection(prop) {
       setOpen(false);
     }
   }
+
+  function select(e) {
+    e.target.style.border = 'thick double blue';
+  }
+
+  function changeSelection() {
+    //TODO
+  }
   return (
     <div tabIndex='-1' className='collection'>
       <img src={svgs[prop.name]} alt='La Matta logo' className='logo' />
@@ -40,7 +48,7 @@ export default function Collection(prop) {
       </div>
       <div id={'imgs-' + prop.name}>
         {imgs[prop.name].map((x) => (
-          <img src={x} key={x + 1} className='thumb-bar' />
+          <img src={x} key={x + 1} className='thumb-bar' onClick={select} onKeyDown={changeSelection} />
         ))}
       </div>
     </div>
