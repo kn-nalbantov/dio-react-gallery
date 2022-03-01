@@ -1,2 +1,2 @@
-rewritting an old website using react
-Mainly done for practice but it's a good idea to replace php localization with react!
+## rewrote an old project using react
+### Mainly did it for practice but I figured it was a good idea to replace old php localization with stateful react variables! 🚀 
