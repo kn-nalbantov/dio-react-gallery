@@ -19,10 +19,10 @@ export default function Collection(prop) {
       e.target.textContent = '⬆';
       setOpen(true);
       container.style.height = '500px';
-      Array.from(col).forEach(x => x.style.display = 'block');
+      Array.from(col).forEach((x) => (x.style.display = 'block'));
     } else {
       e.target.textContent = '⬇';
-      Array.from(col).forEach(x => x.style.display = 'none');
+      Array.from(col).forEach((x) => (x.style.display = 'none'));
       container.style.height = '250px';
       setOpen(false);
     }
@@ -30,15 +30,41 @@ export default function Collection(prop) {
 
   function select(e) {
     setDisplayed(e.target.src);
-    Array.from(e.target.parentNode.children).forEach(x => x.style.border = 'thick double orange');
+    Array.from(e.target.parentNode.children).forEach((x) => (x.style.border = 'thick double orange'));
     e.target.style.border = 'thick double blue';
   }
 
-  function changeSelection() {
-    //TODO
+  function changeSelection(e) {
+    const thumb_bar_imgs = Array.from(e.target.children[4].children);
+    let selected;
+    for (let i = 0; i < thumb_bar_imgs.length; i++) {
+      if (thumb_bar_imgs[i].style.border === 'thick double blue') {
+        selected = i;
+      }
+    }
+    if (e.code === 'KeyD') {
+      thumb_bar_imgs.forEach((x) => (x.style.border = 'thick double orange'));
+      if (thumb_bar_imgs[selected+1] !== undefined) {
+        thumb_bar_imgs[selected+1].style.border = 'thick double blue';
+        setDisplayed(thumb_bar_imgs[selected+1].src);
+      } else {
+        thumb_bar_imgs[0].style.border = 'thick double blue';
+        setDisplayed(thumb_bar_imgs[0].src);
+      }
+    }
+    if (e.code === 'KeyA') {
+      thumb_bar_imgs.forEach((x) => (x.style.border = 'thick double orange'));
+      if (thumb_bar_imgs[selected-1] !== undefined) {
+        thumb_bar_imgs[selected-1].style.border = 'thick double blue';
+        setDisplayed(thumb_bar_imgs[selected-1].src);
+      } else {
+        thumb_bar_imgs[5].style.border = 'thick double blue';
+        setDisplayed(thumb_bar_imgs[5].src);
+      }
+    }
   }
   return (
-    <div tabIndex='-1' className='collection'>
+    <div tabIndex='-1' className='collection' onKeyDown={changeSelection}>
       <img src={svgs[prop.name]} alt='La Matta logo' className='logo' />
       <p>
         {lang[prop.lang][prop.name]}{' '}
@@ -52,7 +78,7 @@ export default function Collection(prop) {
       </div>
       <div id={'imgs-' + prop.name}>
         {imgs[prop.name].map((x) => (
-          <img src={x} key={x + 1} className='thumb-bar' onClick={select} onKeyDown={changeSelection} />
+          <img src={x} key={x + 1} className='thumb-bar' onClick={select} />
         ))}
       </div>
     </div>
