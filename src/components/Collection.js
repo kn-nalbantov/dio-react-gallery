@@ -9,6 +9,8 @@ export default function Collection(prop) {
   const svgs = { kaos, lamatta, robertrudger };
   const [isOpen, setOpen] = useState(false);
 
+  let [displayed, setDisplayed] = useState(imgs[prop.name][0]);
+
   function onClick(e) {
     const container = e.target.parentNode;
     const col = e.target.parentNode.children[4].children;
@@ -27,6 +29,8 @@ export default function Collection(prop) {
   }
 
   function select(e) {
+    setDisplayed(e.target.src);
+    Array.from(e.target.parentNode.children).forEach(x => x.style.border = 'thick double orange');
     e.target.style.border = 'thick double blue';
   }
 
@@ -44,7 +48,7 @@ export default function Collection(prop) {
       </p>
       <button onClick={onClick}>⬇</button>
       <div className='fullimg'>
-        <img src={imgs[prop.name][0]} alt={prop.name} className='displayed' />
+        <img src={displayed} alt={prop.name} className='displayed' />
       </div>
       <div id={'imgs-' + prop.name}>
         {imgs[prop.name].map((x) => (
