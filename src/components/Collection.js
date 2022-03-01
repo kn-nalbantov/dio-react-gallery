@@ -8,8 +8,7 @@ import { lang } from '../lang.js';
 export default function Collection(prop) {
   const svgs = { kaos, lamatta, robertrudger };
   const [isOpen, setOpen] = useState(false);
-
-  let [displayed, setDisplayed] = useState(imgs[prop.name][0]);
+  const [displayed, setDisplayed] = useState(imgs[prop.name][0]);
 
   function onClick(e) {
     const container = e.target.parentNode;
